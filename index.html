@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>商丘科技馆</title>
+<script>
+    $(document).ready(function() {
+    $('#my-button').click(function() {
+    $.ajax({
+      url: '/my-flask-function',
+      type: 'GET',
+      success: function(response) {
+        console.log(response);
+      }
+    });
+  });
+});
+</script>
+<style>
+    h1 {
+        color: black;
+        text-align: center;
+    }
+    input {
+        background-color: dodgerblue;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        align-items: center;
+        display: block;
+        margin: 0 auto;
+        font-size: 40px;
+        color: aliceblue;
+    }
+    p {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<h1>释放你的情绪</h1>
+<p style="text-align: center">
+    <img src="../static/image/ai.png" alt="暂无图片"/>
+</p>
+<!--<div class="open_page">-->
+<!--    <button id="my-button">取值</button>-->
+<!--    <button onclick="myFunction()">取值</button>-->
+<!--</div>-->
+<form action="/print_info" method="post">
+    <input type="submit" value="取纸">
+</form>
+<p id="pid">点击取纸按钮，从取纸口取纸</p>
+</body>
+</html>
